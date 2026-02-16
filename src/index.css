@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Retro arcade font feel */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1, h2, .arcade-text {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* CRT screen effect */
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.97; }
+  15% { opacity: 0.94; }
+  20% { opacity: 0.98; }
+  50% { opacity: 0.95; }
+  80% { opacity: 0.98; }
+  100% { opacity: 0.97; }
+}
+
+.crt-effect {
+  animation: flicker 0.15s infinite;
+}
+
+/* Glow effects */
+.glow-green {
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+}
+
+.glow-red {
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+}
+
+.glow-yellow {
+  text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00;
+}
+
+/* Button press effect */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Prevent text selection on mobile controls */
+.mobile-control {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
